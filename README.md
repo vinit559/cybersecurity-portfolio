@@ -121,7 +121,8 @@ If you run `make test` and CMake is not installed, the Makefile will attempt to 
 ./scripts/vendor_gtest.sh release-1.14.0
 git add third_party/googletest
 git commit -m "Vendor googletest"
-```
+``` 
+// one of the best cmkae file and directory and that make a file and save it to one of the another one and some of the other file and enter into  same file cmake file named filed and compile the file into that file and said to the best one  and also make //
 
 Docker-based testing
 --------------------
@@ -133,3 +134,16 @@ If you don't want to install CMake locally, you can use the provided Dockerfile.
 ```
 
 This builds an Ubuntu-based image containing CMake and runs the GoogleTest suite inside the container.
+
+What changed in this branch
+--------------------------
+
+- Vendored GoogleTest (branch-only) under `third_party/googletest` so CI and offline builds can use a local copy.
+- Added a robust `make test` fallback: if CMake is missing the Makefile will attempt to vendor gtest, and if CMake is still unavailable it will compile and run a small builtin test runner so developers can run tests without CMake.
+
+Creating the PR
+---------------
+
+Use this one-click link to open the prepared PR for this branch (review the description and `PR_BODY.md` before creating):
+
+https://github.com/vinit559/cybersecurity-portfolio/pull/new/vendor/googletest
