@@ -45,6 +45,17 @@ TEST(ComplexTest, Equality) {
     EXPECT_FALSE(a == c);
 }
 
+TEST(ComplexTest, ScalarOperations) {
+    Complex v(5, -3);
+    // scalar multiply
+    auto mv = v * 2.0;
+    EXPECT_DOUBLE_EQ(mv.real, 10.0);
+    EXPECT_DOUBLE_EQ(mv.imag, -6.0);
+
+    // division by scalar zero should throw
+    EXPECT_THROW(v / 0.0, std::runtime_error);
+}
+
 int main(int argc, char **argv) {
     ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
